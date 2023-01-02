@@ -1,3 +1,47 @@
 {% include'admin/cabecera.html'%}
-admin libros
+</br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    Datos del libro
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <label for="txtNombre" class="form-label">Nombre:</label>
+                            <input type="text"
+                            class="form-control" name="txtNombre" id="txtNombre" aria-describedby="helpId" placeholder="Escriba el nombre del libro">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="txtImagen" class="form-label">Imagen</label>
+                            <input type="text"
+                            class="form-control" name="txtImagen" id="txtImagen" aria-describedby="helpId" placeholder="Seleccione la imagen">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtURL" class="form-label">URL Descarga</label>
+                            <input type="text"
+                            class="form-control" name="txtURL" id="txtURL" aria-describedby="helpId" placeholder="Escriva la URL de descarga">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    Footer
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-7">
+            Second Column
+        </div>
+        
+    </div>
+</div>
+
+
+
 {% include'admin/pie.html'%}

@@ -17,7 +17,7 @@ def nosotros():
 
 
 
-@app.route('/admin')
+@app.route('/admin/')
 def admin_index():
     return render_template('admin/index.html')
 
@@ -25,6 +25,10 @@ def admin_index():
 def admin_login():
     return render_template('admin/login.html')
 
+
+@app.route('/admin/libros')
+def admin_libros():
+    return render_template('admin/libros.html')
 
 
 
