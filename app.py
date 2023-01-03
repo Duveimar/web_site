@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template,Request,redirect
+from flask import render_template, request, redirect
 
 app=Flask(__name__)
 
@@ -31,19 +31,18 @@ def admin_libros():
     return render_template('admin/libros.html')
 
 
-@app.route('/admin/libros/guardar', methods=['POST'])
+@app.route('/admin/libros/guardar',methods=['POST'])
 def admin_libros_guardar(): 
-    _nombre=Request.form['txtNombre']
-    _url=Request.form['txtURL']
-    _archivo=Request.files['txtImagen']
+    
+    _nombre=request.form ['txtNombre']
+    _url=request.form['txtURL']
+    _archivo=request.files['txtImagen']
     
     print(_nombre)
     print(_url)
     print(_archivo)
     
-    
-    
-    return redirect('/admin/libros')
+    return redirect('/admin/libros/')
 
 
 
