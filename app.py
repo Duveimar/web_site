@@ -42,7 +42,7 @@ def admin_libros_guardar():
     print(_url)
     print(_archivo)
     
-    return redirect('/admin/libros/')
+    return redirect('/admin/libros')
 
 
 
