@@ -1,54 +1,20 @@
 {% include'sitio/cabecera.html'%}
 
     <div class="row">
-
+        {% for libro in libros %}
         <div class="col-md-3">
             <div class="card">
-                <img class="card-img-top" src="https://4.bp.blogspot.com/-Z09tT-J0pCo/WpIBF638tzI/AAAAAAAALNw/N0dye6jAIdUhjwraLahAfQsDYywVXu19gCLcBGAs/s1600/aula-virtual.jpg" alt="Title">
+                <img class="card-img-top" src="/img/{{ libro[2] }}" alt="Title">
                 <div class="card-body">
-                    <h4 class="card-title">fisico-virtual</h4>
-                    <p class="card-text">MAD</p>
+                    <h4 class="card-title">{{libro[1]}}</h4>
+                    <p class="card-text">MAD
                     <a name="" id="" class="btn btn-primary" href="#" role="button">Descargar</a>
+                    </p>
                 </div>
             </div>
         </div>
-        
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="https://4.bp.blogspot.com/-Z09tT-J0pCo/WpIBF638tzI/AAAAAAAALNw/N0dye6jAIdUhjwraLahAfQsDYywVXu19gCLcBGAs/s1600/aula-virtual.jpg" alt="Title">
-                <div class="card-body">
-                    <h4 class="card-title">fisico-virtual</h4>
-                    <p class="card-text">MAD</p>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Descargar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="https://4.bp.blogspot.com/-Z09tT-J0pCo/WpIBF638tzI/AAAAAAAALNw/N0dye6jAIdUhjwraLahAfQsDYywVXu19gCLcBGAs/s1600/aula-virtual.jpg" alt="Title">
-                <div class="card-body">
-                    <h4 class="card-title">fisico-virtual</h4>
-                    <p class="card-text">MAD</p>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Descargar</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card">
-                <img class="card-img-top" src="https://4.bp.blogspot.com/-Z09tT-J0pCo/WpIBF638tzI/AAAAAAAALNw/N0dye6jAIdUhjwraLahAfQsDYywVXu19gCLcBGAs/s1600/aula-virtual.jpg" alt="Title">
-                <div class="card-body">
-                    <h4 class="card-title">fisico-virtual</h4>
-                    <p class="card-text">MAD</p>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Descargar</a>
-                </div>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
 
-
-seccion de libros
 
 {% include'sitio/pie.html'%}

@@ -27,7 +27,14 @@ def imagenes(imagen):
 
 @app.route('/libros')
 def libros():
-    return render_template('sitio/libros.html')
+    
+    conexion=mysql.connect()
+    cursor= conexion.cursor()
+    cursor.execute("SELECT * FROM `libros`")
+    libros=cursor.fetchall()
+    conexion.commit()
+    print(libros)
+    return render_template('sitio/libros.html',libros=libros)
 
 @app.route('/nosotros')
 def nosotros():
@@ -93,10 +100,13 @@ def admin_libros_borrar():
     
     conexion=mysql.connect()
     cursor= conexion.cursor()
-    cursor.execute("SELECT * FROM `libros` WHERE id=%s",(_id))
+    cursor.execute("SELECT imagen FROM `libros` WHERE id=%s",(_id))
     libro=cursor.fetchall()
     conexion.commit()
     print(libro)
+    
+    if os.path.exists("templates/sitio/img/"+str(libro[0][0])):
+        os.unlink("templates/sitio/img/"+str(libro[0][0]))
     
     conexion=mysql.connect()
     cursor= conexion.cursor()
