@@ -1,4 +1,4 @@
-import os
+import os 
 from flask import Flask
 from flask import render_template, request, redirect
 from flaskext.mysql import MySQL
@@ -10,7 +10,7 @@ mysql=MySQL()
 
 app.config['MYSQL_DATABASE_HOST']='localhost'
 app.config['MYSQL_DATABASE_USER']='root'
-app.config['MYSQL_DATABASE_PASWORD']=''
+app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='sitio'
 mysql.init_app(app)
 
@@ -53,7 +53,7 @@ def admin_libros():
     conexion.commit()
     print(libros)
     
-    return render_template('admin/libros.html',libros=libros)
+    return render_template("admin/libros.html",libros=libros)
 
 
 @app.route('/admin/libros/guardar',methods=['POST'])
@@ -63,7 +63,7 @@ def admin_libros_guardar():
     _url=request.form['txtURL']
     _archivo=request.files['txtImagen']
     
-    tiempo= datetime.now()
+    tiempo=datetime.now()
     horaActual=tiempo.strftime('%Y%H%M%S')
     
     if _archivo.filename!="":
@@ -72,7 +72,8 @@ def admin_libros_guardar():
     
     
     sql="INSERT INTO `libros` (`id`, `nombre`, `imagen`, `url`) VALUES (NULL,%s,%s,%s);"
-    datos=(_nombre,_archivo.filename,_url)
+    datos=(_nombre,nuevoNombre,_url)
+    
     conexion= mysql.connect()
     cursor=conexion.cursor()
     cursor.execute(sql,datos)
