@@ -25,6 +25,11 @@ def imagenes(imagen):
     print(imagen)
     return send_from_directory(os.path.join('templates/sitio/img'),imagen)
 
+@app.route("/css/<archivocss>")
+def css_link(archivocss):
+    return send_from_directory(os.path.join('templates/sitio/css'),archivocss)
+    
+
 
 @app.route('/libros')
 def libros():
@@ -35,6 +40,7 @@ def libros():
     libros=cursor.fetchall()
     conexion.commit()
     print(libros)
+    
     return render_template('sitio/libros.html',libros=libros)
 
 @app.route('/nosotros')
@@ -55,7 +61,7 @@ def admin_login():
 @app.route('/admin/login', methods=['POST'])
 def admin_login_post():
     _usuario=request.form ['txtUsuario']
-    _password=request.form['txtPassword']
+    _password=request.form ['txtPassword']
     print(_usuario)
     print(_password)
     
