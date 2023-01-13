@@ -5,7 +5,9 @@ from flaskext.mysql import MySQL
 from datetime import datetime
 from flask import send_from_directory
 
+
 app=Flask(__name__)
+
 app.secret_key="du"
 mysql=MySQL()
 
@@ -14,6 +16,7 @@ app.config['MYSQL_DATABASE_USER']='root'
 app.config['MYSQL_DATABASE_PASSWORD']=''
 app.config['MYSQL_DATABASE_DB']='sitio'
 mysql.init_app(app)
+
 
 
 @app.route('/')
